@@ -1,17 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
-import cl from './StopWatch.module.css';
+import { getMinutes, getSeconds, getMilliseconds } from '../../../lib/timeSelector';
 import WatchCounter from '../../UI/WatchCounter/WatchCounter';
 import { actionStart, actionTimePause, actionTimeStart } from '../../../store/actionsCreators/stopWatchActionCreators';
 
-// import {
-//   actionContinueTimer,
-//   actionPauseTimer,
-//   actionResetTimer,
-//   actionSetTimeNow,
-//   actionStartTimer,
-// } from '../../../store/actionsCreators/stopWatchActionCreators';
+import cl from './StopWatch.module.css';
 
 function StopWatch() {
   const dispatch = useDispatch();
@@ -21,18 +15,6 @@ function StopWatch() {
   const timePause = useSelector(state => state.stopWatch.timePause);
 
   const interval = useRef(null);
-
-  function getMilliseconds(time) {
-    return Math.trunc((time % 1000) / 10);
-  }
-
-  function getSeconds(time) {
-    return Math.trunc(time / 1000) % 60;
-  }
-
-  function getMinutes(time) {
-    return Math.trunc(Math.trunc(time / 1000) / 60);
-  }
 
   function getInitValues() {
     if (start && timeStart) {
