@@ -24,7 +24,7 @@ function Clock() {
     const interval = setInterval(() => {
       setDate(new Date());
       setDateNowStr(getDataStrFormat(new Date()));
-    }, 500);
+    }, 200);
 
     return () => {
       clearInterval(interval);
