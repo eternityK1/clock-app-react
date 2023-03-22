@@ -1,0 +1,9 @@
+.main_cnt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.root button {
+  margin: 8px;
+}

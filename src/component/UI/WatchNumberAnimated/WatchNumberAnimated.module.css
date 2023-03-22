@@ -1,0 +1,84 @@
+.number_animation_top {
+  animation-duration: 700ms;
+  animation-name: slideTopCenter;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.number_animation_center {
+  animation-duration: 700ms;
+  animation-name: slideCenterBottom;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.number_not_animation_top{
+  transform: translateY(-120px);
+}
+
+.number_not_animation_center{
+  transform: translateY(-35px);
+}
+
+.left{
+  position: absolute;
+  left: 7px;
+}
+
+.right{
+  position: absolute;
+  right: 8px;
+}
+
+@keyframes slideTopCenter {
+  from {
+    transform: translateY(-120px);
+  }
+
+  to {
+    transform: translateY(-35px);
+  }
+}
+
+@keyframes slideCenterBottom {
+  from {
+    transform: translateY(-35px);
+  }
+
+  to {
+    transform: translateY(40px);
+  }
+}
+
+.cnt_time {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 19px;
+  font-size: 58px;
+  font-family: sans-serif;
+  margin-left: 1px;
+  margin-right: 1px;
+  top: 0;
+  overflow: hidden;
+}
+
+.cnt_time_dark{
+  background: white;
+}
+
+.cnt_time_light{
+  background: #5a5d7f;
+}
+
+.cnt_time_light .number{
+  color: white;
+}
+
+.cnt_time_dark .number{
+  color: black;
+}
+

@@ -1,0 +1,15 @@
+.date {
+  text-align: center;
+  font-family: "Arial", serif;
+  font-size: 1.7em;
+  color: aliceblue;
+}
+
+.date_light{
+  color: #5a5d7d;
+  font-weight: bold;
+}
+
+.date_dark{
+  color: white;
+}

@@ -1,0 +1,49 @@
+.number_animation_bottom {
+  top: 0;
+}
+
+.left{
+  position: absolute;
+  left: 8px;
+}
+
+.right{
+  position: absolute;
+  right: 6px;
+}
+
+.cnt_time {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 19px;
+  font-size: 58px;
+  font-family: sans-serif;
+  margin-left: 1px;
+  margin-right: 1px;
+  top: 0;
+  overflow: hidden;
+}
+
+.cnt_time_dark{
+  background: white;
+}
+
+.cnt_time_light{
+  background: #5a5d7f;
+}
+
+.cnt_time_light .number{
+  color: white;
+}
+
+.cnt_time_dark .number{
+  color: black;
+}
+
+
+

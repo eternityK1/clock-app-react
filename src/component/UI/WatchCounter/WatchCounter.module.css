@@ -1,0 +1,15 @@
+.main_cnt_watch {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.delimiter {
+  display: flex;
+  justify-content: center;
+  font-family: ui-serif;
+  font-size: 45px;
+  align-items: center;
+  color: #000000;
+}

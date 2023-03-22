@@ -1,0 +1,134 @@
+.menu {
+    height: 67px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    transition-property: bottom, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    display: flex;
+    justify-content: space-around;
+}
+
+.trigger_menu {
+    height: 67px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1;
+}
+
+.trigger_menu:hover + .menu_full_mode {
+    bottom: 0;
+    opacity: 1;
+    padding-top: 0;
+}
+
+.menu_full_mode {
+    position: absolute;
+    bottom: -68px;
+    opacity: 1;
+    z-index: 100;
+}
+
+.menu_full_mode:hover {
+    bottom: 0;
+    opacity: 1;
+    padding-top: 0;
+}
+
+.menu_item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.link_item_menu {
+    font-size: 0.7em;
+    font-family: sans-serif;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+.img_item_menu {
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    display: block;
+}
+
+.text_item_menu {
+    text-align: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+.menu_dark {
+    background: darkslategrey;
+}
+
+.menu_light {
+    background: #a0a4b9;
+}
+
+.menu_dark .menu_item_active, .menu_dark .menu_item:hover {
+    background: #374c8d;
+}
+
+.menu_light .menu_item_active, .menu_light .menu_item:hover {
+    background: #5a5d81;
+}
+
+.menu_dark .link_item_menu {
+    color: #c3c3c3;
+}
+
+.menu_light .link_item_menu {
+    color: #3c2626;
+}
+
+.menu_light .img_item_menu {
+    fill: #3c2626;
+}
+
+.menu_dark .img_item_menu {
+    fill: cadetblue;
+}
+
+.menu_light .menu_item_active .img_item_menu {
+    fill: white;
+}
+
+.menu_dark .menu_item_active .img_item_menu, .menu_light .menu_item_active .img_item_menu {
+    fill: white;
+}
+
+.menu_dark .menu_item_active .link_item_menu, .menu_light .menu_item_active .link_item_menu {
+    color: white;
+}
+
+@media screen and (max-width: 786px) {
+
+    .menu {
+        height: 50px;
+    }
+
+    .menu_dark .menu_item_active, .menu_dark .menu_item:hover {
+        background: transparent;
+    }
+
+    .menu_light .menu_item_active, .menu_light .menu_item:hover {
+        background:transparent;
+    }
+
+}
