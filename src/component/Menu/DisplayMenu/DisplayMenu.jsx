@@ -1,7 +1,7 @@
 import { ReactSVG } from 'react-svg';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { displayActionsSetColorMode } from '../../../store/actionsCreators/displayModeActionsCreater';
+import displayActionsSetColorMode from '../../../store/actionsCreators/displayModeActionsCreater';
 
 import style from './DisplayMenu.module.css';
 import SvgFullScreenIcon from '../../../uploads/img/icon_menu/fullscreen.svg';
@@ -43,7 +43,7 @@ function DisplayMenu({ handleFullScreen }) {
 }
 
 DisplayMenu.propTypes = {
-  handleFullScreen: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  handleFullScreen: PropTypes.oneOfType([PropTypes.object]).isRequired
 };
 
 export default DisplayMenu;
