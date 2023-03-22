@@ -34,7 +34,7 @@
 }
 
 .cnt_time_light{
-  background: #5a5d7f;
+  background: #005583;
 }
 
 .cnt_time_light .number{
@@ -44,6 +44,3 @@
 .cnt_time_dark .number{
   color: black;
 }
-
-
-

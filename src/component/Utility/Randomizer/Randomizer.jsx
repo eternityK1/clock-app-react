@@ -56,7 +56,7 @@ function Randomizer() {
         />
       </div>
 
-      <Button variant='contained' color='secondary' className={cl.button_gen} onClick={generate}>
+      <Button variant='contained' color={`${colorMode ? 'secondary' : 'primary'}`} onClick={generate}>
         Cгенерировать
       </Button>
     </div>

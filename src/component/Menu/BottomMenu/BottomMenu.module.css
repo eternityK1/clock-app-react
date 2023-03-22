@@ -78,7 +78,7 @@
 }
 
 .menu_light {
-    background: #a0a4b9;
+    background: #c1e7fd;
 }
 
 .menu_dark .menu_item_active, .menu_dark .menu_item:hover {
@@ -86,7 +86,7 @@
 }
 
 .menu_light .menu_item_active, .menu_light .menu_item:hover {
-    background: #5a5d81;
+    background: #005683;
 }
 
 .menu_dark .link_item_menu {
