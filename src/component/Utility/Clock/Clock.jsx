@@ -32,9 +32,12 @@ function Clock() {
   }, []);
 
   return (
-    <div>
-      <WatchCounterAnimated date={date} />
-      <div className={`${colorMode ? cl.date_dark : cl.date_light} ${cl.date}`}>{dateNowStr}</div>
+    <div className={cl.main_cnt}>
+      <div className={cl.box_center}>
+        <WatchCounterAnimated date={date} />
+      </div>
+
+      <div className={`${cl.box_down} ${colorMode ? cl.date_dark : cl.date_light} ${cl.date}`}>{dateNowStr}</div>
     </div>
   );
 }

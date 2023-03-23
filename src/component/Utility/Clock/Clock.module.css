@@ -1,3 +1,28 @@
+.main_cnt {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.box_down {
+  height: 37px;
+  margin: auto;
+  transform: translate(0, 80px);
+}
+
+.box_center {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .date {
   text-align: center;
   font-family: "Arial", serif;
@@ -13,3 +38,4 @@
 .date_dark{
   color: white;
 }
+

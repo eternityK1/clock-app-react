@@ -1,63 +1,70 @@
-.random_gen{
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
+.random_gen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-.randomGen_result{
-  font-size: 3em;
-  font-family: Arial, serif;;
-  text-align: center;
-  margin-bottom: 20px;
-  word-wrap: break-word;
+.random_gen_result {
+    font-size: 3em;
+    font-family: Arial, serif;;
+    text-align: center;
+    margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
-.random_gen_dark .randomGen_result{
-  color: white;
+.button_gen {
+    width: 288px;
 }
 
-.random_gen_light .randomGen_result{
-  color: black;
+.random_gen_dark .random_gen_result {
+    color: white;
 }
 
-.randomGen_input{
-  height: 30px;
-  width: 90px;
-  font-size: 26px;
-  border-radius: 5px;
-  text-align: center;
-  margin-bottom: 20px;
-  border: 0;
-  box-sizing: content-box;
+.random_gen_light .random_gen_result {
+    color: black;
 }
 
-.random_gen_dark .randomGen_input{
-  color: black;
-  border: 1px solid black;
+.random_gen_input {
+    height: 30px;
+    width: 90px;
+    font-size: 26px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 0;
+    box-sizing: content-box;
 }
 
-.random_gen_light .randomGen_input{
-  color: black;
-  border: 1px solid #3f51b5;
+.random_gen_dark .random_gen_input {
+    color: black;
+    border: 1px solid black;
 }
 
-.randomGen_descInput{
-  color: white;
-  font-size: 25px;
-  margin: 0 12px 0 10px;
-  width: 26px;
+.random_gen_light .random_gen_input {
+    color: black;
+    border: 1px solid #3f51b5;
 }
 
-.random_gen_dark .randomGen_descInput{
-  color: white;
+.random_gen_desc_input {
+    color: white;
+    font-size: 25px;
+    margin: 0 12px 0 6px;
+    width: 26px;
 }
 
-.random_gen_light .randomGen_descInput{
-  color: black;
+.random_gen_dark .random_gen_desc_input {
+    color: white;
 }
 
-.randomGen_cntInput{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.random_gen_light .random_gen_desc_input {
+    color: black;
+}
+
+.random_gen_cnt_input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

@@ -4,7 +4,7 @@ import cl from './Randomizer.module.css';
 import {
   randomizerActionsSetMax,
   randomizerActionsSetMin,
-  randomizerActionsSetResult,
+  randomizerActionsSetResult
 } from '../../../store/actionsCreators/randomizerActionsCreater';
 
 function Randomizer() {
@@ -34,29 +34,34 @@ function Randomizer() {
 
   return (
     <div className={`${cl.random_gen} ${colorMode ? cl.random_gen_dark : cl.random_gen_light}`}>
-      <div className={cl.randomGen_result}> {genInt}</div>
-      <div className={cl.randomGen_cntInput}>
-        <div className={cl.randomGen_descInput}>от:</div>
+      <div className={cl.random_gen_result}> {genInt}</div>
+      <div className={cl.random_gen_cnt_input}>
+        <div className={cl.random_gen_desc_input}>от:</div>
         <input
           value={minGen}
           onChange={e => {
             const inputNumber = Number(e.target.value.replace(/\D/, ''));
             dispatch(randomizerActionsSetMin(inputNumber));
           }}
-          className={cl.randomGen_input}
+          className={cl.random_gen_input}
         />
-        <div className={cl.randomGen_descInput}>до:</div>
+        <div className={cl.random_gen_desc_input}>до:</div>
         <input
           value={maxGen}
           onChange={e => {
             const inputNumber = Number(e.target.value.replace(/\D/, ''));
             dispatch(randomizerActionsSetMax(inputNumber));
           }}
-          className={cl.randomGen_input}
+          className={cl.random_gen_input}
         />
       </div>
 
-      <Button variant='contained' color={`${colorMode ? 'secondary' : 'primary'}`} onClick={generate}>
+      <Button
+        variant='contained'
+        color={`${colorMode ? 'secondary' : 'primary'}`}
+        className={cl.button_gen}
+        onClick={generate}
+      >
         Cгенерировать
       </Button>
     </div>

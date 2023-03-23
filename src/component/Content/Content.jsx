@@ -20,34 +20,16 @@ function Content({ handleFullScreen }) {
       }`}
     >
       <Routes>
-        <Route
-          path='/'
-          element={
-            <div className={cl.cnt_stopwatch}>
-              <div className={cl.timer}>
-                <Clock />
-              </div>
-            </div>
-          }
-        />
+        <Route path='/' element={<Clock />} />
         <Route path='/stopwatch' element={<StopWatch />} />
-        <Route
-          path='/random'
-          element={
-            <div className={cl.cnt_stopwatch}>
-              <div className={cl.timer}>
-                <Randomizer />
-              </div>
-            </div>
-          }
-        />
+        <Route path='/random' element={<Randomizer />} />
       </Routes>
     </div>
   );
 }
 
 Content.propTypes = {
-  handleFullScreen: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  handleFullScreen: PropTypes.oneOfType([PropTypes.object]).isRequired
 };
 
 export default Content;

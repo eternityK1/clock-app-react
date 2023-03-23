@@ -17,37 +17,3 @@
 .content_light {
     background: #ffffff;
 }
-
-.cnt_stopwatch {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    flex-direction: column;
-    box-sizing: border-box;
-}
-
-.text_timer {
-    opacity: 0;
-}
-
-.module_name {
-    text-align: center;
-    font-size: 1.9em;
-    font-family: sans-serif;
-    flex: 1 1;
-    margin-top: 30px;
-    color: #ffffff;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    transition-property: opacity;
-    transition-duration: 2s;
-}
-
-.timer {
-    flex: 10;
-    display: flex;
-    align-items: center;
-}
