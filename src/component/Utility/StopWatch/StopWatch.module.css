@@ -1,9 +1,28 @@
 .main_cnt {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
-.root button {
-  margin: 8px;
+.box_down {
+    height: 37px;
+    margin: auto;
+    transform: translate(0, 60px);
+}
+
+.box_center {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_down button {
+    margin: 8px;
 }

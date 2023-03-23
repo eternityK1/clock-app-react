@@ -16,18 +16,22 @@ function StopWatch() {
 
   const interval = useRef(null);
 
+  const limitTime = 5999999;
+
   function getInitValues() {
     if (start && timeStart) {
-      const time = Date.now() - timeStart;
-      return [getMilliseconds(time), getSeconds(time), getMinutes(time)];
+      let time = Date.now() - timeStart;
+      time = time >= limitTime ? limitTime : time;
+      return [getMilliseconds(time), getSeconds(time), getMinutes(time), time >= limitTime];
     }
 
     if (timeStart && !start) {
-      const time = timePause - timeStart;
-      return [getMilliseconds(time), getSeconds(time), getMinutes(time)];
+      let time = timePause - timeStart;
+      time = time >= limitTime ? limitTime : time;
+      return [getMilliseconds(time), getSeconds(time), getMinutes(time), time >= limitTime];
     }
 
-    return [0, 0, 0];
+    return [0, 0, 0, false];
   }
 
   const initValues = getInitValues();
@@ -35,6 +39,7 @@ function StopWatch() {
   const [msTime, setMsTime] = useState(initValues[0]);
   const [secTime, setSecTime] = useState(initValues[1]);
   const [minTime, setMinTime] = useState(initValues[2]);
+  const [overflowTimer, setOverflow] = useState(initValues[3]);
 
   function setSateAllNumbers(time) {
     setMsTime(getMilliseconds(time));
@@ -47,12 +52,14 @@ function StopWatch() {
       interval.current = setInterval(() => {
         const timeFromStart = Date.now() - timeStart;
 
-        if (timeFromStart > 5999999) {
+        if (timeFromStart >= limitTime) {
           dispatch(actionTimePause(Date.now()));
           dispatch(actionStart(false));
+          setOverflow(true);
+          setSateAllNumbers(limitTime);
+        } else {
+          setSateAllNumbers(Date.now() - timeStart);
         }
-
-        setSateAllNumbers(Date.now() - timeStart);
       }, 40);
     } else {
       clearInterval(interval.current);
@@ -64,6 +71,9 @@ function StopWatch() {
   }, [start]);
 
   function startTimer() {
+    if (overflowTimer) {
+      return;
+    }
     dispatch(actionStart(true));
     dispatch(actionTimeStart(Date.now() - (timePause - timeStart)));
   }
@@ -80,20 +90,24 @@ function StopWatch() {
     dispatch(actionTimeStart(0));
     dispatch(actionTimePause(0));
     dispatch(actionStart(false));
+    setOverflow(false);
     clearInterval(interval.current);
+
     setSateAllNumbers(0);
   }
 
   return (
     <div className={cl.main_cnt}>
-      <WatchCounter thirdNumber={minTime} secondNumber={secTime} firstNumber={msTime} />
-      <div className={cl.root}>
+      <div className={cl.box_center}>
+        <WatchCounter thirdNumber={minTime} secondNumber={secTime} firstNumber={msTime} />
+      </div>
+      <div className={cl.box_down}>
         {start ? (
           <Button variant='contained' color='primary' onClick={() => stopTimer()}>
             Стоп
           </Button>
         ) : (
-          <Button variant='contained' color='primary' onClick={() => startTimer()}>
+          <Button disableRipple variant='contained' color='primary' onClick={() => startTimer()}>
             {timeStart ? 'Продолжить' : 'Старт'}
           </Button>
         )}

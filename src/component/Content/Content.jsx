@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Clock from '../Utility/Clock/Clock';
-import Timer from '../Utility/StopWatch/StopWatch';
+import StopWatch from '../Utility/StopWatch/StopWatch';
 import Randomizer from '../Utility/Randomizer/Randomizer';
 
 import cl from './Content.module.css';
@@ -30,16 +30,7 @@ function Content({ handleFullScreen }) {
             </div>
           }
         />
-        <Route
-          path='/stopwatch'
-          element={
-            <div className={cl.cnt_stopwatch}>
-              <div className={cl.timer}>
-                <Timer />
-              </div>
-            </div>
-          }
-        />
+        <Route path='/stopwatch' element={<StopWatch />} />
         <Route
           path='/random'
           element={
