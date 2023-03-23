@@ -98,22 +98,27 @@ function StopWatch() {
 
   return (
     <div className={cl.main_cnt}>
-      <div className={cl.box_center}>
-        <WatchCounter thirdNumber={minTime} secondNumber={secTime} firstNumber={msTime} />
+      <div className={cl.box_non_center}></div>
+      <div className={cl.box}>
+        <div className={cl.box_center}>
+          <WatchCounter thirdNumber={minTime} secondNumber={secTime} firstNumber={msTime} />
+        </div>
       </div>
-      <div className={cl.box_down}>
-        {start ? (
-          <Button variant='contained' color='primary' onClick={() => stopTimer()}>
-            Стоп
+      <div className={cl.box_non_center}>
+        <div className={cl.box_down}>
+          {start ? (
+            <Button variant='contained' color='primary' onClick={() => stopTimer()}>
+              Стоп
+            </Button>
+          ) : (
+            <Button disableRipple variant='contained' color='primary' onClick={() => startTimer()}>
+              {timeStart ? 'Продолжить' : 'Старт'}
+            </Button>
+          )}
+          <Button variant='contained' color='secondary' onClick={() => resetTimer()}>
+            Сброс
           </Button>
-        ) : (
-          <Button disableRipple variant='contained' color='primary' onClick={() => startTimer()}>
-            {timeStart ? 'Продолжить' : 'Старт'}
-          </Button>
-        )}
-        <Button variant='contained' color='secondary' onClick={() => resetTimer()}>
-          Сброс
-        </Button>
+        </div>
       </div>
     </div>
   );

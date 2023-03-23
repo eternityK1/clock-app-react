@@ -1,11 +1,11 @@
 .left{
   position: absolute;
-  left: 8px;
+  left: 7px;
 }
 
 .right{
   position: absolute;
-  right: 6px;
+  right: 8px;
 }
 
 .cnt_time {

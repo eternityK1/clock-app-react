@@ -13,11 +13,11 @@
 }
 
 .number_not_animation_top{
-  transform: translateY(-120px);
+  transform: translateY(-118px);
 }
 
 .number_not_animation_center{
-  transform: translateY(-35px);
+  transform: translateY(-34px);
 }
 
 .left{
@@ -32,21 +32,21 @@
 
 @keyframes slideTopCenter {
   from {
-    transform: translateY(-120px);
+    transform: translateY(-119px);
   }
 
   to {
-    transform: translateY(-35px);
+    transform: translateY(-34px);
   }
 }
 
 @keyframes slideCenterBottom {
   from {
-    transform: translateY(-35px);
+    transform: translateY(-34px);
   }
 
   to {
-    transform: translateY(40px);
+    transform: translateY(43px);
   }
 }
 

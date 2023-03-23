@@ -31,7 +31,8 @@
         "radix": "off",
         "spaced-comment": "warn",
         "prefer-arrow-callback" : "warn",
-        "react/jsx-boolean-value" : "warn"
+        "react/jsx-boolean-value" : "warn",
+        "react/self-closing-comp" : "off"
     }
 }
 
