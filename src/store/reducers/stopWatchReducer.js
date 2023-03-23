@@ -4,6 +4,7 @@ const defaultState = {
   start: false,
   timeStart: 0,
   timePause: 0,
+  circleData: []
 };
 
 const stopWatchReducer = (state = defaultState, action = {}) => {

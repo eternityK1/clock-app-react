@@ -28,7 +28,7 @@ async function saveToLocalStorage(state) {
 const rootReducer = combineReducers({
   stopWatch: stopWatchReducer,
   randomizer: randomizerReducer,
-  display: displayReducer,
+  display: displayReducer
 });
 
 const store = createStore(rootReducer, loadFromLocalStorage());
