@@ -34,7 +34,6 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer, loadFromLocalStorage());
 
 store.subscribe(() => {
-  console.log('saveInLocalStorage');
   saveToLocalStorage(store.getState());
 });
 
