@@ -32,7 +32,6 @@
         "spaced-comment": "warn",
         "prefer-arrow-callback" : "warn",
         "react/jsx-boolean-value" : "warn"
-
     }
 }
 

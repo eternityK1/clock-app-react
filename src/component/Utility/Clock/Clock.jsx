@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import WatchCounterAnimated from '../../UI/WatchCounterAnimated/WatchCounterAnimated';
-
+import useTheme from '../../../hooks/useTheme';
 import cl from './Clock.module.css';
 
 function Clock() {
@@ -14,7 +13,7 @@ function Clock() {
   }
 
   const [date, setDate] = useState(new Date());
-  const colorMode = useSelector(state => state.display.colorMode);
+  const [colorMode] = useTheme();
   const [dateNowStr, setDateNowStr] = useState(getDataStrFormat(new Date()));
 
   useEffect(() => {

@@ -6,6 +6,7 @@ import {
   randomizerActionsSetMin,
   randomizerActionsSetResult
 } from '../../../store/actionsCreators/randomizerActionsCreater';
+import useTheme from '../../../hooks/useTheme';
 
 function Randomizer() {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function Randomizer() {
   const minGen = useSelector(state => state.randomizer.minGen);
   const maxGen = useSelector(state => state.randomizer.maxGen);
 
-  const colorMode = useSelector(state => state.display.colorMode);
+  const [colorMode] = useTheme();
 
   const generate = () => {
     if (!(Number.isFinite(minGen) && Number.isFinite(parseInt(maxGen)))) {

@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import { memo } from 'react';
+import useTheme from '../../../hooks/useTheme';
+
 import cl from './WatchNumberAnimated.module.css';
 
 function WatchNumberAnimated({ number, prevNumber }) {
-  const colorMode = useSelector(state => state.display.colorMode);
+  const [colorMode] = useTheme();
 
   const numberString = number.toString().padStart(2, '0');
   const prevNumberString = prevNumber.toString().padStart(2, '0');
@@ -44,11 +45,11 @@ function WatchNumberAnimated({ number, prevNumber }) {
 
 WatchNumberAnimated.propTypes = {
   number: PropTypes.number.isRequired,
-  prevNumber: PropTypes.number,
+  prevNumber: PropTypes.number
 };
 
 WatchNumberAnimated.defaultProps = {
-  prevNumber: 0,
+  prevNumber: 0
 };
 
 export default memo(WatchNumberAnimated);

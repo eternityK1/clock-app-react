@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
-import { useSelector } from 'react-redux';
 import useDelayAnimation from '../../../hooks/useDelayAnimation';
 
 import SvgMenuIconClock from '../../../uploads/img/icon_menu/clock.svg';
 import SvgMenuIconSec from '../../../uploads/img/icon_menu/history.svg';
 import SvgMenuCube from '../../../uploads/img/icon_menu/menu__cube.svg';
 import style from './BottomMenu.module.css';
+import useTheme from '../../../hooks/useTheme';
 
 function BottomMenu({ handleFullScreen }) {
-  const colorMode = useSelector(state => state.display.colorMode);
+  const [colorMode] = useTheme();
   const fullMode = useDelayAnimation(handleFullScreen.active, 2000);
 
   function getClassLink({ isActive }) {
@@ -50,7 +50,7 @@ function BottomMenu({ handleFullScreen }) {
 }
 
 BottomMenu.propTypes = {
-  handleFullScreen: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  handleFullScreen: PropTypes.oneOfType([PropTypes.object]).isRequired
 };
 
 export default BottomMenu;

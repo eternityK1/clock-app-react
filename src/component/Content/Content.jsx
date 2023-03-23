@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Routes } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import Clock from '../Utility/Clock/Clock';
 import StopWatch from '../Utility/StopWatch/StopWatch';
 import Randomizer from '../Utility/Randomizer/Randomizer';
+import useTheme from '../../hooks/useTheme';
 
 import cl from './Content.module.css';
 import useDelayAnimation from '../../hooks/useDelayAnimation';
 
 function Content({ handleFullScreen }) {
-  const colorMode = useSelector(state => state.display.colorMode);
+  const [colorMode] = useTheme();
   const fullMode = useDelayAnimation(handleFullScreen.active, 2000);
 
   return (

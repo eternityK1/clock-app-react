@@ -1,16 +1,14 @@
 import { ReactSVG } from 'react-svg';
-import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import displayActionsSetColorMode from '../../../store/actionsCreators/displayModeActionsCreater';
 
 import style from './DisplayMenu.module.css';
 import SvgFullScreenIcon from '../../../uploads/img/icon_menu/fullscreen.svg';
 import SvgColorMode from '../../../uploads/img/icon_menu/colorMode.svg';
 import useDelayAnimation from '../../../hooks/useDelayAnimation';
+import useTheme from '../../../hooks/useTheme';
 
 function DisplayMenu({ handleFullScreen }) {
-  const dispatch = useDispatch();
-  const colorMode = useSelector(state => state.display.colorMode);
+  const [colorMode, setColorMode] = useTheme();
   const fullMode = useDelayAnimation(handleFullScreen.active, 2000);
 
   return (
@@ -24,7 +22,7 @@ function DisplayMenu({ handleFullScreen }) {
           type='button'
           className={`${style.btn_switch}`}
           onClick={() => {
-            dispatch(displayActionsSetColorMode(!colorMode));
+            setColorMode(!colorMode);
           }}
         >
           <ReactSVG className={`${style.svg_icon} ${colorMode ? style.svg_icon_light : ''}`} src={SvgColorMode} />
