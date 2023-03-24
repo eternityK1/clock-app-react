@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@material-ui/core';
-import { useSelector, useDispatch } from 'react-redux';
-import { getMinutes, getSeconds, getMilliseconds } from '../../../lib/timeSelector';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMilliseconds, getMinutes, getSeconds } from '../../../lib/timeSelector';
 import WatchCounter from '../../UI/WatchCounter/WatchCounter';
 import { actionStart, actionTimePause, actionTimeStart } from '../../../store/actionsCreators/stopWatchActionCreators';
 
@@ -105,11 +105,17 @@ function StopWatch() {
       <div className={cl.box_non_center}>
         <div className={cl.box_down}>
           {start ? (
-            <Button variant='contained' color='primary' onClick={() => stopTimer()}>
+            <Button className={cl.start_button} variant='contained' color='primary' onClick={() => stopTimer()}>
               Stop
             </Button>
           ) : (
-            <Button disableRipple variant='contained' color='primary' onClick={() => startTimer()}>
+            <Button
+              className={cl.continue_button}
+              disableRipple
+              variant='contained'
+              color='primary'
+              onClick={() => startTimer()}
+            >
               {timeStart ? 'Continue' : 'Start'}
             </Button>
           )}

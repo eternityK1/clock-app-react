@@ -19,11 +19,19 @@
 }
 
 .box_down button {
-    margin: 8px;
+    margin: 15px;
 }
 
 @media screen and (max-height: 800px) {
     .box_down {
-        margin-top: 10px;
+        margin-top: 20px;
     }
+}
+
+.start_button {
+    width: 109px;
+}
+
+.continue_button {
+    width: 109px;
 }
