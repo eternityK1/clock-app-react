@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import WatchCounterAnimated from '../../UI/WatchCounterAnimated/WatchCounterAnimated';
 import useTheme from '../../../hooks/useTheme';
 import cl from './Clock.module.css';
@@ -23,7 +23,7 @@ function Clock() {
     const interval = setInterval(() => {
       setDate(new Date());
       setDateNowStr(getDataStrFormat(new Date()));
-    }, 100);
+    }, 50);
 
     return () => {
       clearInterval(interval);
