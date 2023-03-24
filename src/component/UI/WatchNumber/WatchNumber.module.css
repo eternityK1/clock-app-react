@@ -1,42 +1,36 @@
-.left{
-  position: absolute;
-  left: 7px;
-}
-
-.right{
-  position: absolute;
-  right: 8px;
+.number {
+    width: 33px;
+    height: 66px;
+    text-align: center;
+    line-height: 80px;
 }
 
 .cnt_time {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  border-radius: 19px;
-  font-size: 58px;
-  font-family: sans-serif;
-  margin-left: 1px;
-  margin-right: 1px;
-  top: 0;
-  overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 19px;
+    font-size: 58px;
+    font-family: sans-serif;
+    margin-left: 1px;
+    margin-right: 1px;
+    overflow: hidden;
 }
 
-.cnt_time_dark{
-  background: white;
+.cnt_time_dark {
+    background: white;
 }
 
-.cnt_time_light{
-  background: #005583;
+.cnt_time_light {
+    background: #005583;
 }
 
-.cnt_time_light .number{
-  color: white;
+.cnt_time_light .number {
+    color: white;
 }
 
-.cnt_time_dark .number{
-  color: black;
+.cnt_time_dark .number {
+    color: black;
 }

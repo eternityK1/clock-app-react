@@ -1,84 +1,64 @@
-.number_animation_top {
-  animation-duration: 700ms;
-  animation-name: slideTopCenter;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-
-.number_animation_center {
-  animation-duration: 700ms;
-  animation-name: slideCenterBottom;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-
-.number_not_animation_top{
-  transform: translateY(-118px);
-}
-
-.number_not_animation_center{
-  transform: translateY(-34px);
-}
-
-.left{
-  position: absolute;
-  left: 7px;
-}
-
-.right{
-  position: absolute;
-  right: 8px;
-}
-
 @keyframes slideTopCenter {
-  from {
-    transform: translateY(-119px);
-  }
+    0% {
+        transform: translateY(-50%);
+    }
 
-  to {
-    transform: translateY(-34px);
-  }
+    100% {
+        transform: translateY(0);
+    }
 }
 
-@keyframes slideCenterBottom {
-  from {
-    transform: translateY(-34px);
-  }
-
-  to {
-    transform: translateY(43px);
-  }
+.number {
+    width: 33px;
+    height: 66px;
+    text-align: center;
+    line-height: 80px;
 }
+
+.cell_animation_number {
+    width: 33px;
+    height: 66px;
+    text-align: center;
+    line-height: 80px;
+}
+
 
 .cnt_time {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 19px;
-  font-size: 58px;
-  font-family: sans-serif;
-  margin-left: 1px;
-  margin-right: 1px;
-  top: 0;
-  overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 19px;
+    font-size: 58px;
+    font-family: sans-serif;
+    margin-left: 1px;
+    margin-right: 1px;
+    overflow: hidden;
 }
 
-.cnt_time_dark{
-  background: white;
+
+.number_animation_top {
+    height: 132px;
+    animation-name: slideTopCenter;
+    animation-duration: 700ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
-.cnt_time_light{
-  background: #005683;
+.cnt_time_dark {
+    background: white;
 }
 
-.cnt_time_light .number{
-  color: white;
+.cnt_time_light {
+    background: #005683;
 }
 
-.cnt_time_dark .number{
-  color: black;
+.cnt_time_light .number {
+    color: white;
+}
+
+.cnt_time_dark .number {
+    color: black;
 }
 

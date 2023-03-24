@@ -10,8 +10,8 @@ function WatchNumber({ number }) {
 
   return (
     <div className={`${cl.cnt_time} ${colorMode ? cl.cnt_time_dark : cl.cnt_time_light}`}>
-      <div className={`${cl.number} ${cl.left} `}>{stringValue[0]}</div>
-      <div className={`${cl.number} ${cl.right}`}>{stringValue[1]}</div>
+      <div className={`${cl.number}`}>{stringValue[0]}</div>
+      <div className={`${cl.number}`}>{stringValue[1]}</div>
     </div>
   );
 }

@@ -100,9 +100,7 @@ function StopWatch() {
     <div className={cl.main_cnt}>
       <div className={cl.box_non_center}></div>
       <div className={cl.box}>
-        <div className={cl.box_center}>
-          <WatchCounter thirdNumber={minTime} secondNumber={secTime} firstNumber={msTime} />
-        </div>
+        <WatchCounter thirdNumber={minTime} secondNumber={secTime} firstNumber={msTime} />
       </div>
       <div className={cl.box_non_center}>
         <div className={cl.box_down}>

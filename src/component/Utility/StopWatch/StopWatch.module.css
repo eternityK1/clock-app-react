@@ -9,18 +9,13 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .box_non_center {
     flex: 3;
     display: flex;
     justify-content: center;
-}
-
-.box_center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .box_down button {

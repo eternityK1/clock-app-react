@@ -23,7 +23,7 @@ function Clock() {
     const interval = setInterval(() => {
       setDate(new Date());
       setDateNowStr(getDataStrFormat(new Date()));
-    }, 200);
+    }, 100);
 
     return () => {
       clearInterval(interval);
@@ -32,11 +32,13 @@ function Clock() {
 
   return (
     <div className={cl.main_cnt}>
-      <div className={cl.box_center}>
+      <div className={cl.box_non_center}></div>
+      <div className={cl.box}>
         <WatchCounterAnimated date={date} />
       </div>
-
-      <div className={`${cl.box_down} ${colorMode ? cl.date_dark : cl.date_light} ${cl.date}`}>{dateNowStr}</div>
+      <div className={cl.box_non_center}>
+        <div className={`${colorMode ? cl.date_dark : cl.date_light} ${cl.date}`}>{dateNowStr}</div>
+      </div>
     </div>
   );
 }

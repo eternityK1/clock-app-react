@@ -19,11 +19,11 @@ WatchCounter.propTypes = {
   thirdNumber: PropTypes.number.isRequired,
   secondNumber: PropTypes.number.isRequired,
   firstNumber: PropTypes.number.isRequired,
-  delimiter: PropTypes.string,
+  delimiter: PropTypes.string
 };
 
 WatchCounter.defaultProps = {
-  delimiter: '',
+  delimiter: ''
 };
 
 export default WatchCounter;
