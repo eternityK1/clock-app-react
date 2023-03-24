@@ -22,7 +22,6 @@
     line-height: 80px;
 }
 
-
 .cnt_time {
     display: flex;
     justify-content: center;
@@ -36,7 +35,6 @@
     margin-right: 1px;
     overflow: hidden;
 }
-
 
 .number_animation_top {
     height: 132px;
@@ -54,11 +52,11 @@
     background: #005683;
 }
 
-.cnt_time_light .number {
+.cnt_time_light .number, .cnt_time_light .cell_animation_number {
     color: white;
 }
 
-.cnt_time_dark .number {
+.cnt_time_dark .number, .cnt_time_dark .cell_animation_number {
     color: black;
 }
 

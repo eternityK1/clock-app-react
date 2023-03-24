@@ -4,7 +4,7 @@ import WatchNumberAnimated from '../WatchNumberAnimated/WatchNumberAnimated';
 
 import cl from './WatchCounterAnimated.module.css';
 
-const WatchCounterAnimated = function WatchCounterAnimation({ date }) {
+function WatchCounterAnimated({ date }) {
   // refDate is Time after which the animation starts.
   // This is necessary for the normal start of the animation.
   const refDate = new Date(date.getTime() - date.getMilliseconds() + 1000);
@@ -43,9 +43,10 @@ const WatchCounterAnimated = function WatchCounterAnimation({ date }) {
       <WatchNumberAnimated className={cl.main_cnt_watch} number={nowTime.sec} prevNumber={prevTime.sec} />
     </div>
   );
-};
+}
+
 WatchCounterAnimated.propTypes = {
-  date: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  date: PropTypes.oneOfType([PropTypes.object]).isRequired
 };
 
 export default WatchCounterAnimated;
