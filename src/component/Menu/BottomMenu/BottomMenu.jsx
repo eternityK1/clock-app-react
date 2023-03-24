@@ -29,19 +29,19 @@ function BottomMenu({ handleFullScreen }) {
         <NavLink className={getClassLink} to='/'>
           <div className={style.link_item_menu}>
             <ReactSVG className={style.img_item_menu} src={SvgMenuIconClock} />
-            <div className={style.text_item_menu}>Часы</div>
+            <div className={style.text_item_menu}>Clock</div>
           </div>
         </NavLink>
         <NavLink className={getClassLink} to='/stopwatch'>
           <div className={style.link_item_menu}>
             <ReactSVG className={style.img_item_menu} src={SvgMenuIconSec} />
-            <div className={style.text_item_menu}>Секундомер</div>
+            <div className={style.text_item_menu}>Stopwatch</div>
           </div>
         </NavLink>
         <NavLink className={getClassLink} to='/random'>
           <div className={style.link_item_menu}>
             <ReactSVG className={style.img_item_menu} src={SvgMenuCube} />
-            <div className={style.text_item_menu}>Рандомайзер</div>
+            <div className={style.text_item_menu}>Randomizer</div>
           </div>
         </NavLink>
       </nav>

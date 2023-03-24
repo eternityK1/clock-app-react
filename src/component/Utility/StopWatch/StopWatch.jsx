@@ -106,15 +106,15 @@ function StopWatch() {
         <div className={cl.box_down}>
           {start ? (
             <Button variant='contained' color='primary' onClick={() => stopTimer()}>
-              Стоп
+              Stop
             </Button>
           ) : (
             <Button disableRipple variant='contained' color='primary' onClick={() => startTimer()}>
-              {timeStart ? 'Продолжить' : 'Старт'}
+              {timeStart ? 'Continue' : 'Start'}
             </Button>
           )}
           <Button variant='contained' color='secondary' onClick={() => resetTimer()}>
-            Сброс
+            Reset
           </Button>
         </div>
       </div>

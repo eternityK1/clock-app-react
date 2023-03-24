@@ -29,7 +29,7 @@
 
 .random_gen_input {
     height: 30px;
-    width: 90px;
+    width: 80px;
     font-size: 26px;
     border-radius: 5px;
     text-align: center;
@@ -52,7 +52,6 @@
     color: white;
     font-size: 25px;
     margin: 0 12px 0 6px;
-    width: 26px;
 }
 
 .random_gen_dark .random_gen_desc_input {

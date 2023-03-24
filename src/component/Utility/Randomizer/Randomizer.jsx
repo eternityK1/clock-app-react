@@ -18,14 +18,14 @@ function Randomizer() {
 
   const generate = () => {
     if (!(Number.isFinite(minGen) && Number.isFinite(parseInt(maxGen)))) {
-      dispatch(randomizerActionsSetResult('Не верный диапазон'));
+      dispatch(randomizerActionsSetResult('Invalid range'));
       dispatch(randomizerActionsSetMin(0));
       dispatch(randomizerActionsSetMax(100));
       return;
     }
 
     if (maxGen < minGen) {
-      dispatch(randomizerActionsSetResult('Не верный диапазон'));
+      dispatch(randomizerActionsSetResult('Invalid range'));
       return;
     }
 
@@ -37,7 +37,7 @@ function Randomizer() {
     <div className={`${cl.random_gen} ${colorMode ? cl.random_gen_dark : cl.random_gen_light}`}>
       <div className={cl.random_gen_result}> {genInt}</div>
       <div className={cl.random_gen_cnt_input}>
-        <div className={cl.random_gen_desc_input}>от:</div>
+        <div className={cl.random_gen_desc_input}>from:</div>
         <input
           value={minGen}
           onChange={e => {
@@ -46,7 +46,7 @@ function Randomizer() {
           }}
           className={cl.random_gen_input}
         />
-        <div className={cl.random_gen_desc_input}>до:</div>
+        <div className={cl.random_gen_desc_input}>to:</div>
         <input
           value={maxGen}
           onChange={e => {
@@ -63,7 +63,7 @@ function Randomizer() {
         className={cl.button_gen}
         onClick={generate}
       >
-        Cгенерировать
+        Generate
       </Button>
     </div>
   );
