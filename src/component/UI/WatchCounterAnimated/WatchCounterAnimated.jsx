@@ -5,36 +5,26 @@ import WatchNumberAnimated from '../WatchNumberAnimated/WatchNumberAnimated';
 import cl from './WatchCounterAnimated.module.css';
 
 function WatchCounterAnimated({ date }) {
-  // refDate is Time after which the animation starts.
-  // This is necessary for the normal start of the animation.
-  const refDate = new Date(date.getTime() - date.getMilliseconds() + 1000);
-  const firstSecond = useRef(refDate);
+  // firstSecond is the time after which the animation starts.
+  // This is necessary for the animation to start normally
+  const firstSecond = useRef(new Date(date.getTime() - date.getMilliseconds() + 1000));
 
-  const nowTime = {};
-  const prevTime = {};
+  const nowTime = {
+    sec: date.getSeconds(),
+    minutes: date.getMinutes(),
+    hour: date.getHours()
+  };
 
-  if (date.getTime() < firstSecond.current.getTime()) {
-    // First props no animation
-    nowTime.sec = date.getSeconds();
-    nowTime.minutes = date.getMinutes();
-    nowTime.hour = date.getHours();
-
-    prevTime.sec = date.getSeconds();
-    prevTime.minutes = date.getMinutes();
-    prevTime.hour = date.getHours();
-  } else {
-    // Subsequent props
-
-    nowTime.sec = date.getSeconds();
-    nowTime.minutes = date.getMinutes();
-    nowTime.hour = date.getHours();
-
-    const startDate = new Date(date.getTime());
-    startDate.setSeconds(startDate.getSeconds() - 1);
-    prevTime.sec = startDate.getSeconds();
-    prevTime.minutes = startDate.getMinutes();
-    prevTime.hour = startDate.getHours();
+  const prevDate = date;
+  if (date.getTime() > firstSecond.current.getTime()) {
+    prevDate.setSeconds(prevDate.getSeconds() - 1);
   }
+
+  const prevTime = {
+    sec: prevDate.getSeconds(),
+    minutes: prevDate.getMinutes(),
+    hour: prevDate.getHours()
+  };
 
   return (
     <div className={cl.main_cnt_watch}>
